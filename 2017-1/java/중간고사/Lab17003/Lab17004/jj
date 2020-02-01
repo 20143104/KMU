@@ -1,0 +1,200 @@
+
+push 1
+Queue : 1 
+rear=1, front=0
+
+push 2
+Queue : 1 2 
+rear=2, front=0
+
+pop
+Queue : 2 
+rear=2, front=1
+
+pop
+Queue : 
+rear=2, front=2
+
+pop
+java.lang.Exception: Queue is empty. Cannot delete.
+Queue : 
+rear=2, front=2
+
+push 3
+Queue : 3 
+rear=3, front=2
+
+pop
+Queue : 
+rear=3, front=3
+
+push 10
+Queue : 10 
+rear=4, front=3
+
+push 11
+Queue : 10 11 
+rear=5, front=3
+
+push 12
+Queue : 10 11 12 
+rear=6, front=3
+
+pop
+Queue : 11 12 
+rear=6, front=4
+
+push 13
+Queue : 11 12 13 
+rear=0, front=4
+
+push 16
+Queue : 11 12 13 16 
+rear=1, front=4
+
+push 17
+Queue : 11 12 13 16 17 
+rear=2, front=4
+
+push 7
+Queue : 11 12 13 16 17 7 
+rear=3, front=4
+
+push 14
+java.lang.Exception: Queue is Full
+Queue : 11 12 13 16 17 7 
+rear=3, front=4
+
+pop
+Queue : 12 13 16 17 7 
+rear=3, front=5
+
+pop
+Queue : 13 16 17 7 
+rear=3, front=6
+
+push 20
+Queue : 13 16 17 7 20 
+rear=4, front=6
+
+push 21
+Queue : 13 16 17 7 20 21 
+rear=5, front=6
+
+pop
+Queue : 16 17 7 20 21 
+rear=5, front=0
+
+push 22
+Queue : 16 17 7 20 21 22 
+rear=6, front=0
+
+push 8
+java.lang.Exception: Queue is Full
+Queue : 16 17 7 20 21 22 
+rear=6, front=0
+
+push 9
+java.lang.Exception: Queue is Full
+Queue : 16 17 7 20 21 22 
+rear=6, front=0
+
+pop
+Queue : 17 7 20 21 22 
+rear=6, front=1
+
+push 18
+Queue : 17 7 20 21 22 18 
+rear=0, front=1
+
+pop
+Queue : 7 20 21 22 18 
+rear=0, front=2
+
+push 23
+Queue : 7 20 21 22 18 23 
+rear=1, front=2
+
+pop
+Queue : 20 21 22 18 23 
+rear=1, front=3
+
+push 4
+Queue : 20 21 22 18 23 4 
+rear=2, front=3
+
+pop
+Queue : 21 22 18 23 4 
+rear=2, front=4
+
+push 5
+Queue : 21 22 18 23 4 5 
+rear=3, front=4
+
+push 6
+java.lang.Exception: Queue is Full
+Queue : 21 22 18 23 4 5 
+rear=3, front=4
+
+pop
+Queue : 22 18 23 4 5 
+rear=3, front=5
+
+pop
+Queue : 18 23 4 5 
+rear=3, front=6
+
+push 24
+Queue : 18 23 4 5 24 
+rear=4, front=6
+
+push 15
+Queue : 18 23 4 5 24 15 
+rear=5, front=6
+
+pop
+Queue : 23 4 5 24 15 
+rear=5, front=0
+
+push 25
+Queue : 23 4 5 24 15 25 
+rear=6, front=0
+
+push 26
+java.lang.Exception: Queue is Full
+Queue : 23 4 5 24 15 25 
+rear=6, front=0
+
+push 27
+java.lang.Exception: Queue is Full
+Queue : 23 4 5 24 15 25 
+rear=6, front=0
+
+pop
+Queue : 4 5 24 15 25 
+rear=6, front=1
+
+pop
+Queue : 5 24 15 25 
+rear=6, front=2
+
+push 28
+Queue : 5 24 15 25 28 
+rear=0, front=2
+
+pop
+Queue : 24 15 25 28 
+rear=0, front=3
+
+pop
+Queue : 15 25 28 
+rear=0, front=4
+
+push 29
+Queue : 15 25 28 29 
+rear=1, front=4
+
+push 30
+Queue : 15 25 28 29 30 
+rear=2, front=4
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#get').click(function () {
+                $.ajax({
+                    url: '/member',
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val(data);
+                    },
+                error:function(request,status,error){
+                	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                }
+                });
+            });
+
+            $('#get2').click(function () {
+            	$.ajax({
+                    url: '/member/' + + $('#id').val(),
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#output').val("success in getting record(id="+$('#id').val() + ")");
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    }
+                });
+              
+            
+            });
+
+            $('#post').click(function () {
+            	$('#id').val('');
+            	console.log(JSON.stringify({
+                    name: $('#name').val(),
+                    weight: $('#weight').val(),
+                    rrid: $('#rrid').val()
+                }));
+                $.ajax({
+                    url: '/member',
+                    type: 'post',
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        weight: $('#weight').val(),
+                        rrid: $('#rrid').val()
+                    }),
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                        $('#output').val("success in creating record(id="+$('#id').val() + ")");
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    	if(request.status == 406) {
+                            obj = JSON.parse(request.responseText);
+                            if(obj.name == "#error") $('#name').val($('#name').val() + " <-- (error)");
+                            if(obj.weight == -1.0) $('#weight').val($('#weight').val() + " <-- (error)");
+                            if(obj.rrid == "#error") $('#rrid').val($('#rrid').val() + " <-- (error)");
+                            $('#gender').val('');                    		
+                    	}
+                    }
+                });
+              
+              
+            });
+
+            $('#put').click(function () {
+                $.ajax({
+                    url: '/member/' + $('#id').val(),
+                    type: 'put',
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                    	id: $('#id').val(),
+                        name: $('#name').val(),
+                        weight: $('#weight').val(),
+                        rrid: $('#rrid').val()
+                    }),
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                        $('#output').val("success in updating record(id="+$('#id').val() + ")");
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    	if(request.status == 406) {
+                            obj = JSON.parse(request.responseText);
+                            if(obj.name == "#error") $('#name').val($('#name').val() + " <-- (error)");
+                            if(obj.weight == -1.0) $('#weight').val($('#weight').val() + " <-- (error)");
+                            if(obj.rrid == "#error") $('#rrid').val($('#rrid').val() + " <-- (error)");
+                            $('#gender').val('');                    		
+                    	}
+                    }
+                    });
+            });
+
+            $('#delete').click(function () {
+            	$.ajax({
+                    url: '/member/' + $('#id').val(),
+                    type: 'delete',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val("success in deleting record(id="+$('#id').val() + ")");
+                    },
+                error:function(request,status,error){
+                	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                 }
+                });
+                
+              
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <button id="get">고객리스??검??</button>
+    <button id="get2">개별고객(검??)</button>
+    <button id="post">?�규고객(추�?)</button>
+    <button id="put">고객?�데?�트(변�?</button>
+    <button id="delete">고객?�퇴(??��)</button>
+    
+    <h1>?�력?�보</h1>
+    
+            <table>
+                <tr>
+                    <td><label for="id">ID: </label></td>
+                    <td><input id="id" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="name">?�름:</label></td>
+                    <td><input id="name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="weight"> 체중:</label></td>
+                    <td><input id="weight" /></td>
+                </tr>
+                <tr>
+                    <td><label for="rrid">주�?번호:</label></td>
+                    <td><input id="rrid" /></td>
+                </tr>
+                <tr>
+                    <td><label for="gender"> ?�별:</label></td>
+                    <td><input id="gender" style="background-color:#dddddd;" readonly /></td>
+                </tr>
+            </table>
+
+    <h1>출력?�보</h1>
+    
+    <textarea id="output" disabled="disabled" cols="80" rows="20"></textarea>
+</body>
+</html>

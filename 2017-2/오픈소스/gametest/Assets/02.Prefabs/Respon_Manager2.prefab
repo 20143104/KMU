@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1971151978783980}
+  m_IsPrefabParent: 1
+--- !u!1 &1971151978783980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4353355537987078}
+  - component: {fileID: 114678163924241256}
+  - component: {fileID: 114209459770523098}
+  m_Layer: 0
+  m_Name: Respon_Manager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4353355537987078
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971151978783980}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 27, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+--- !u!114 &114209459770523098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971151978783980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9ca4fdb6c76314eb2f7e00e6901a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextObj: {fileID: 0}
+--- !u!114 &114678163924241256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971151978783980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143ea6ae0638c9f41a17c519354987a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 1972341391106962, guid: 1662a3a3f4a4ae343880baa570cabfb6, type: 2}
+  ResponTr: {fileID: 4353355537987078}

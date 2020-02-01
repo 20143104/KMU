@@ -1,0 +1,12 @@
+A(0.2) = 1.4368
+B(1.5) = 41.1250
+c = a + b
+C(2.5) = 601.0625
+A and B are NOT the same!
+Continue (y/n) 
+A(0.2) = 1.4240
+B(1.5) = 14.1250
+c = a + b
+C(2.5) = 105.7500
+A and B ARE the same!
+Continue (y/n) 

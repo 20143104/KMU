@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIPS</title>
+<style>
+	
+	h1{
+		color: black;
+		text-align: center;
+		font-family: "Times New Roman";
+		text-decoration: underline;
+	}
+
+	textarea {
+		position: static;
+		width: 100%;
+		height: 300px;
+		padding: 12px 20px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		font-size: 16px;
+		resize: none;
+	}
+
+	#margin {
+		margin: 10px;
+	}
+
+	img {
+		opacity: 0.4;
+		filter: alpha(opacity=40); /* For IE8 and earlier */
+		position: absolute;
+		right:20px;
+		bottom: 10px;
+	}
+
+	img:hover {
+		opacity: 1.0;
+		filter: alpha(opacity=100); /* For IE8 and earlier */
+	}
+
+	#button {
+		position: relative;
+		margin-top: 5px;
+		float: right;
+	}
+
+
+	#video {
+		position: relative;
+		margin-top: 30px;
+		margin-left: 550px;
+	}
+	
+</style>
+</head>
+<body>
+	<h1> Tips for old-dog</h1>
+	<textarea>
+	Make sure your senior dog has regular visits with your veterinarian. In fact, many veterinarians recommend that senior dogs should be examined twice a year, even more so if the dog has serious health issues. A thorough physical examination by your veterinarian may reveal health issues that can impact your pet's life and comfort level, such as dental disease, arthritis, heart disease, kidney disease and more.
+	Watch your senior dog's behavior carefully. This is important for all pets but doubly so for senior dogs. Changes in your dog's behavior may be a symptom of disease. Watch specifically for changes in your dog's appetite and water consumption. Watch for changes in urinary and bowel habits and alterations in sleep routines. If your dog suddenly becomes irritable for no reason, it may be because he is in pain, having difficulty seeing, or having a hard time hearing properly. Any changes in your senior pet's routines or behaviors should prompt a consultation with your veterinarian.
+	Be aware that your senior dog may have pain caused by arthritis or other health issues that make it difficult for him to get around as well as he did when he was younger. Consider providing ramps or stairs to allow your senior dog to access furniture or beds. Ramps on stairs may make it easier for your pet to get up and down the stairs, and carpeting on slippery floors may help your dog gain his footing. Your senior dog may need assistance getting into and out of the car as well.
+	Dietary requirements may change as your dog ages. It's important that you provide your senior dog a pet food that is age appropriate. Some older pets tend to gain weight and may need a diet for less active dogs. Others may have difficulty holding their weight and may need a diet with a higher calorie content or better palatability. Older pets also may have diseases that can be manipulated and/or controlled at least partly through diet. Your veterinarian can help you choose an appropriate diet for your senior dog based on your dog's individual nutritional requirements.
+	Provide soft blankets and towels for your senior dog's bed. This will help him to rest easier and sleep better. There are even special orthopedic beds made for senior dogs. In addition to having a denser form to help cushion your senior dog's aging joints, some orthopedic beds can be outfitted with a heat and/or vibration source, which increases circulation and reduces stiffness — perfect for dogs with arthritis.
+
+
+
+If you have more information about this fill it and save ...
+	</textarea>
+	<button id="button" type="button" value="save"> Save</button>
+	<br></br>
+	</div>
+		<br>
+		<div id="margin" style="width:95%; border:15px groove #73AD21; padding:10px;">
+		<h2>Massage at a peaceful time of day.</h2>
+		<ul type="square">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<a href="project.html">
+		<img src="home.png" >
+	</a>
+
+</body>
+</html>

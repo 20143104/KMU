@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#get').click(function () {
+                $.ajax({
+                    url: '/member',
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val(data);
+                    },
+                error:function(request,status,error){
+                	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                }
+                });
+            });
+
+            $('#loginget').click(function () {
+                $.ajax({
+                    url: '/login',
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val(data);
+                    },
+                error:function(request,status,error){
+                	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                }
+                });
+            });
+
+            $('#get2').click(function () {
+            	$.ajax({
+                    url: '/member/' + + $('#id').val(),
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#output').val("success in getting record(id="+$('#id').val() + ")");
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    }
+                });
+
+
+            });
+		//추가
+            $('#post').click(function () {
+            	$('#id').val('');
+            	console.log(JSON.stringify({
+                    name: $('#name').val(),
+                    weight: $('#weight').val(),
+                    rrid: $('#rrid').val()
+                }));
+                $.ajax({
+                    url: '/member',
+                    type: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        weight: $('#weight').val(),
+                        rrid: $('#rrid').val()
+                    }),
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                        $('#output').val("success in creating record(id="+$('#id').val() + ")");
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    	if(request.status == 406) {
+                            obj = JSON.parse(request.responseText);
+                            if(obj.name == "#error") $('#name').val($('#name').val() + " <-- (error)");
+                            if(obj.weight == -1.0) $('#weight').val($('#weight').val() + " <-- (error)");
+                            if(obj.rrid == "#error") $('#rrid').val($('#rrid').val() + " <-- (error)");
+                            $('#gender').val('');
+                    	}
+                    }
+                });
+
+
+            });
+		//����
+            $('#put').click(function () {
+                $.ajax({
+                    url: '/member/' + $('#id').val(),
+                    type: 'put',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                    	id: $('#id').val(),
+                        name: $('#name').val(),
+                        weight: $('#weight').val(),
+                        rrid: $('#rrid').val()
+                    }),
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#weight').val(obj.weight);
+                        $('#rrid').val(obj.rrid);
+                        $('#gender').val(obj.gender);
+                        $('#output').val("success in updating record(id="+$('#id').val() + ")");
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    	if(request.status == 406) {
+                            obj = JSON.parse(request.responseText);
+                            if(obj.name == "#error") $('#name').val($('#name').val() + " <-- (error)");
+                            if(obj.weight == -1.0) $('#weight').val($('#weight').val() + " <-- (error)");
+                            if(obj.rrid == "#error") $('#rrid').val($('#rrid').val() + " <-- (error)");
+                            $('#gender').val('');
+                    	}
+                    }
+                    });
+            });
+            $('#loginput').click(function () {
+                $.ajax({
+                    url: '/login/' + $('#id').val(),
+                    type: 'put',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                    	account: $('#account').val(),
+                        password: $('#password').val(),
+                        email: $('#email').val(),
+                        level: $('#level').val()
+                    }),
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        $('#account').val(obj.account);
+                        $('#password').val(obj.password);
+                        $('#email').val(obj.email);
+                        $('#level').val(obj.level);
+
+                        $('#output').val("success in updating record(id="+$('#id').val() + ")");
+                    },
+                    error:function(request,status,error){
+                    	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    	if(request.status == 406) {
+                            obj = JSON.parse(request.responseText);
+                            if(obj.account == "#error") $('#account').val($('#account').val() + " <-- (error)");
+                            if(obj.level == -1.0) $('#level').val($('#level').val() + " <-- (error)");
+                            if(obj.email == "#error") $('#email').val($('#email').val() + " <-- (error)");
+
+                    	}
+                    }
+                    });
+            });
+
+            $('#delete').click(function () {
+            	$.ajax({
+                    url: '/member/' + $('#id').val(),
+                    type: 'delete',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val("success in deleting record(id="+$('#id').val() + ")");
+                    },
+                error:function(request,status,error){
+                	$('#output').val("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                 }
+                });
+
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <button id="get">��������Ʈ(�˻�)</button>
+    <button id="get2">��������(�˻�)</button>
+    <button id="post">�ű԰���(�߰�)</button>
+    <button id="put">����������Ʈ(����)</button>
+    <button id="delete">����Ż��(����)</button>
+    <button id="loginget">Login��������Ʈ(�˻�)</button>
+    <button id ="loginput">Login����������Ʈ(����)</button>
+    <h1>��������</h1>
+
+            <table>
+                <tr>
+                    <td><label for="id">ID: </label></td>
+                    <td><input id="id" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="name">�̸�:</label></td>
+                    <td><input id="name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="weight"> ü��:</label></td>
+                    <td><input id="weight" /></td>
+                </tr>
+                <tr>
+                    <td><label for="rrid">�ֹι�ȣ:</label></td>
+                    <td><input id="rrid" /></td>
+                </tr>
+                <tr>
+                    <td><label for="gender"> ����:</label></td>
+                    <td><input id="gender" style="background-color:#dddddd;" readonly /></td>
+                </tr>
+                <tr>
+                    <td><label for="account"> ����:</label></td>
+                    <td><input id="account"></td>
+                </tr>
+                <tr>
+                    <td><label for="password"> ���й�ȣ:</label></td>
+                    <td><input id="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="email"> �̸���:</label></td>
+                    <td><input id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="level"> ����:</label></td>
+                    <td><input id="level"></td>
+                </tr>
+            </table>
+
+    <h1>��������</h1>
+
+    <textarea id="output" disabled="disabled" cols="80" rows="20"></textarea>
+</body>
+</html>

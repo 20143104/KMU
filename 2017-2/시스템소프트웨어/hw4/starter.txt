@@ -1,0 +1,61 @@
+STARTER    START  2000
+           MOV     A, NEAR ="Hello, Starter"
+  	   PUSH    A
+           CALL    PRINTLN
+           ADD     SP,  NEAR =2
+           INT      10        // Trap to Monitor
+           COB                // Halt
+           END
+PRINTLN    PUSH  B
+//#line:14 MOV   B SP
+           LD  B SP 
+//#endline:14  
+           PUSH  C
+           PUSH  X
+//#line:18   MOV   A %4
+           LD  A %4 
+//#endline:18  
+           PUSH  A
+           CALL  FPUTS
+           ADD   SP NEAR =2
+//#line:22   MOV   A NEAR ='\n'
+           LD  A NEAR ='\n' 
+//#endline:22  
+           OUT   12
+           POP   X
+           POP   C
+//#line:28   MOV   SP B
+           LD  SP B 
+//#endline:28  
+           POP   B
+           RET
+
+FPUTS           PUSH  B
+//#line:13   MOV   B SP
+                LD  B SP 
+//#endline:13  
+                PUSH  C
+                PUSH  X
+//#line:17   MOV   X %4
+                LD  X %4 
+//#endline:17  
+//#line:18   MOV   C NEAR =0
+                LD  C NEAR =0 
+//#endline:18  
+//#line:19   PUTS_LOOP MOVH  A @0
+PUTS_LOOP       LDH A @0 
+//#endline:19  
+                SUB   A NEAR =0
+                JZ    NEAR PUTS_RETURN
+                INC   C
+                INC   X
+                OUT   12
+                JUMP  NEAR PUTS_LOOP
+PUTS_RETURN     POP   X
+                POP   C
+//#line:30   MOV   SP B
+                LD  SP B 
+//#endline:30  
+                POP   B
+                RET
+

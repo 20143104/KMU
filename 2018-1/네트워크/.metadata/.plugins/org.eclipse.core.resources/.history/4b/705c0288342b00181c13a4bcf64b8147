@@ -1,0 +1,12 @@
+package com.cclab.web.client;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HTTP_Client {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HTTP_Client.class, args);
+	}
+}

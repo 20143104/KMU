@@ -1,0 +1,39 @@
+    p{
+        font-family:"Nanum Gothic",serif;
+        font-size:1em;
+        font-weight:bold;
+    }
+    p.feat{
+        font-family:'Catamaran',sans-serif;
+        line-height:0;  
+    }    
+    p.main1{
+        text-align:center;
+        font-size: 2.5em;
+        color:white;
+    }
+    
+    p.main2{
+        text-align:center;
+        font-size:1em;
+        color:floralwhite;
+    }
+    p.main3{
+        text-align:center;
+        font-size:1em;
+        color:floralwhite;
+        font-family:'Catamaran',sans-serif;
+    }
+    p.titled-p{
+        font-size:1.3em; 
+    }
+    
+    p.image-1{
+        text-align:center; 
+        font-weight:bold; 
+        font-size:1.2em
+    }
+    p.image-2{
+        text-align:center; 
+        font-size:0.8em
+    }

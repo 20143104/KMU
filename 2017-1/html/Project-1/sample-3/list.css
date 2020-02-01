@@ -1,0 +1,37 @@
+    ul{
+        border-bottom:2px solid #c85155;
+        
+        width:100%; 
+        top:0;
+        margin:0;
+        list-style-type:none;
+        padding:0;
+        overflow:hidden;
+        background-color:white;
+    }
+    li{    
+        display:inline;
+        font-family:"Nanum Gothic",serif;
+    }    
+    
+    li a{
+        display:inline-block;
+        color:dimgrey;
+        font-weight:bold;
+        text-align:center;
+        margin:0 3px;
+        padding:40px 16px;
+        text-decoration:none;     
+    
+    }
+    li:first-child{
+        font-size:1.5em;
+    }
+    li a:hover{        
+    
+        color:#c85155;        
+    } 
+
+
+
+

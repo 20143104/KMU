@@ -1,0 +1,26 @@
+Dist : 0 25 14 25 3 20 12 24 21 
+P    : -1 5 0 2 0 2 4 6 7 
+Path to 0 : 0 
+Path to 1 : 0 2 5 1 
+Path to 2 : 0 2 
+Path to 3 : 0 2 3 
+Path to 4 : 0 4 
+Path to 5 : 0 2 5 
+Path to 6 : 0 4 6 
+Path to 7 : 0 4 6 7 
+Path to 8 : 0 4 6 7 8 
+Dist : 0 2 8 7 9 6 
+P    : -1 2 3 0 5 1 
+Path to 0 : 0 
+Path to 1 : 0 3 2 1 
+Path to 2 : 0 3 2 
+Path to 3 : 0 3 
+Path to 4 : 0 3 2 1 5 4 
+Path to 5 : 0 3 2 1 5 
+Dist : 0 3 7 2 7 
+P    : -1 0 1 0 3 
+Path to 0 : 0 
+Path to 1 : 0 1 
+Path to 2 : 0 1 2 
+Path to 3 : 0 3 
+Path to 4 : 0 3 4 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="jquery-3.1.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var color = 'black';
+            var width = 1;
+            var isDown = false;
+            var newPoint, oldPoint;
+            // 소켓을 연결합니다.
+            var socket = io.connect();
+            // 캔버스를 추출합니다.
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            // 마우스 이벤트를 연결합니다.
+            $(canvas).mousedown(function (event) {
+                isDown = true;
+                oldPoint = {
+                    x: event.pageX - $(this).position().left,
+                    y: event.pageY - $(this).position().top
+                };
+            });
+            $(canvas).mousemove(function (event) {
+                if (!isDown) { return; }
+                newPoint = {
+                    x: event.pageX - $(this).position().left,
+                    y: event.pageY - $(this).position().top
+                };
+                socket.emit('line', {
+                    x1: oldPoint.x,
+                    y1: oldPoint.y,
+                    x2: newPoint.x,
+                    y2: newPoint.y,
+                    color: color,
+                    width: width
+                });
+                oldPoint = newPoint;
+            });
+            $(canvas).mouseup(function (event) {
+                isDown = false;
+                oldPoint = {
+                    x: event.pageX - $(this).position().left,
+                    y: event.pageY - $(this).position().top
+                };
+            });
+            // 입력 양식 이벤트를 연결합니다.
+            $('#pen').click(function () {
+                width = 1;
+                color = 'black';
+                $('#width').val(width);
+            });
+            $('#eraser').click(function () {
+                width = 10;
+                color = 'white';
+                $('#width').val(width);
+            });
+            $('#width').change(function () {
+                width = $(this).val()
+            });
+            // 소켓 이벤트를 연결합니다.
+            socket.on('line', function (data) {
+                context.beginPath();
+                                context.lineWidth = data.width;
+                context.strokeStyle = data.color;
+                context.moveTo(data.x1, data.y1);
+                context.lineTo(data.x2, data.y2);
+                context.stroke();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="pen">펜</button>
+    <button id="eraser">지우개</button>
+    <input id="width" type="range" min="1" max="10" value="1" />
+    <br />
+    <canvas id="canvas" width="1000" height="600"></canvas>
+</body>
+</html>

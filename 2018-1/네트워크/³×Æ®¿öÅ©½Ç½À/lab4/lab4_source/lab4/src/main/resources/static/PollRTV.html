@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>헌법개정안투표</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        #main_section { overflow: hidden; }
+        #main_article {
+            width: 460px;
+            float: left;
+        }
+        #map_image {
+            width: 500px;
+            float: right;
+        }
+        figure { margin: 0; padding: 0; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script src="KoreaMapPathData2.js"></script>
+    <script src="raphael-min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // Create Variable
+            var canvas = document.getElementById('map_image');
+            var paper = Raphael(canvas, 500, 716);
+	    var count = 0;
+  	    $('.btn_new_data').click(function(){
+            	$.getJSON('/map', function (data) {
+                	$.each(data, function (key, value) {
+            			$.each(koreaMapPathData, function (index, item) {
+                			// Create Path
+                			var path = paper.path(item['d']);
+
+                			// Stroke Path
+                			path.attr('stroke', item['stroke']);
+
+					if(value.name == item['id'])
+						path.attr('fill', value.color);
+            			});
+                	});
+            	});
+  	    });
+
+            // 1초마다 함수를 실행합니다.
+            setInterval(function () {
+		count++;
+                $.getJSON('/map', {
+                    dummy: new Date().getTime()
+                }, function (data) {
+
+                	$.each(data, function (key, value) {
+            			$.each(koreaMapPathData, function (index, item) {
+                			// Create Path
+                			var path = paper.path(item['d']);
+
+                			// Stroke Path
+                			path.attr('stroke', item['stroke']);
+					if(count%2==0){
+					if(value.name == item['id'])
+						path.attr('fill', value.color);
+					}
+					else{
+						if (item['fill'] != 'none') {
+
+		   path.attr('fill', '#666666');
+                } 
+					}
+
+            			});
+                	});
+
+                });
+            }, 3000);
+
+            // Create Function
+            function randomColor() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++)
+                    color += letters[Math.round(Math.random() * 15)];
+                return color;
+            }
+
+           $.each(koreaMapPathData, function (index, item) {
+                // Create Path
+                var path = paper.path(item['d']);
+
+                // Stroke Path
+                path.attr('stroke', item['stroke']);
+
+                // Fill Path
+                if (item['fill'] != 'none') {
+ //                   path.attr('fill', randomColor());
+		   path.attr('fill', '#666666');
+                } 
+            });
+        });
+    </script>
+</head>
+<body>
+    <header id="main_header">
+        <h2>헌법개정안투표</h2>
+    </header>
+    <section id="main_section">
+        <article id="main_article">
+            <h3>(1안) 4년임기-재선허용 (Green)</h3>
+            <h3>(2안) 6년임기-재선불허 (Blue)</h3>
+            <h3>(3안) 헌법개정반대 (Red)</h3>
+        </article>
+
+	<button class="btn_new_data" style="padding:3px">최신데이터요청</button>
+        <figure id="map_image">
+
+        </figure>
+    </section>
+</body>
+</html>

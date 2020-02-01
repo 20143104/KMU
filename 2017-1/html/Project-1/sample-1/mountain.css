@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+.navi{
+    width: 100%;
+    background-color: yellowgreen;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    color: powderblue;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: yellowgreen;
+}
+li {
+    float:right;
+    display: inline-block;
+    margin-right:50px;
+    font-family: arial, sans-serif;
+}
+li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: limegreen;
+    color: white;
+}
+
+ul li:hover ul {display: block;}
+ul li ul {
+    position: absolute;
+    width: 135px;
+    display: none;
+    background-color: white;
+}
+ul li ul li { 
+    background: white; 
+    display:block; 
+}
+ul li ul li a {
+    color: yellowgreen;
+    display:block;
+} 
+ul li ul li :hover{
+    background-color: white;
+    color:darkgreen;
+}
+body {
+    margin: 0;
+}
+.title{
+    color: forestgreen;
+    font-family: 'Nanum Pen Script';
+    margin-top: 1em;
+    font-size: 4em;
+    margin-left: 20px;
+}
+h2{
+    font-family: 'Nanum Pen Script';
+    font-size:2em;
+    margin-left: 20px;
+}
+
+p{
+    font-family: 'Jeju Myeongjo', serif;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.information{
+    margin-top: 170px;
+}
+div.img{
+    margin:5px;
+    border: 1px solid #ccc;
+    float: left;
+    width:180px;
+}
+div.img:hover{
+    border: 1px solid black;
+}
+div.img img{
+    width: 100%;
+    height: auto;
+}
+div.desc{
+    padding: 15px;
+    text-align: center;
+}
+table{
+    margin-left: 20px;
+}
+th{
+    background-color: lightblue;
+}
+pre{
+    font-family: 'Nanum Gothic', serif;
+}
+table, th, td{
+    padding: 5px 15px 5px 15px;
+    font-family: 'Nanum Gothic', serif;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    
+}
+p a{
+    color: forestgreen;
+}

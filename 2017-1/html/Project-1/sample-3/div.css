@@ -1,0 +1,101 @@
+div.main{
+        
+        position:static;
+        background-image: url("visual_bg.jpg");
+        background-repeat: no-repeat;     
+        overflow:hidden;
+        width:100%; 
+        min-height:500px
+    } 
+    div.application1{
+        
+        position:relative;
+        width:100%;
+    }
+div.profile{
+    position:relative;
+}
+
+    
+    div.wantpeople1-1{
+        
+        position:relative;
+        max-width:100%;
+        height:40px;
+        background-color: #f8f8f8;
+    }
+    div.titled{
+        margin:10px 25px 1px 15px;
+        padding:10px 0 5px 0;
+    }
+    div.wantpeople2-1{
+        overflow:auto;
+        max-width:100%; 
+        
+        background-color:#f8f8f8
+    }
+    div.image{
+        float:left;
+        margin:20px
+    }
+    
+    div.table{
+        padding:0px 0px 30px 150px;
+    }
+    
+    
+    div.about{
+        position:relative;
+        background-color:#303030; 
+        width:100%; 
+        height:200px; 
+        font-size:0.8em; 
+        color:#f5f5f5; 
+        text-align:center
+    }
+    div.head{
+       
+        position:static;
+        height:100px;
+        overflow:hidden;
+    }
+div.picture{
+    padding : 0 10px 0 30px;
+    position:relative;
+    overflow:auto;
+        max-width:100%; 
+        
+        background-color:#f8f8f8
+}
+div.picture-title{
+    padding-top:10px;
+    padding-left:25px;
+    margin:10px 0 0 0;
+        position:relative;
+        max-width:100%;
+        height:40px;
+        background-color: #f8f8f8;
+    }
+
+div.mem{
+            align : center;
+            float:left;
+            width:30%;
+            border:thin silver solid;
+            margin:0.5em;
+            padding:0.5em;
+            
+           
+        }
+        
+        div.mem p{
+            text-align:center;
+            font-style:italic;
+            font-size:smaller;
+            text-indent:0;
+        }
+
+div.mem:hover{
+    border:thin black solid;
+}
+

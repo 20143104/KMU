@@ -1,0 +1,41 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity test is
+    Port ( INPUT : in  STD_LOGIC_VECTOR(3 downto 0);
+           SEL : in  STD_LOGIC_VECTOR(1 downto 0);
+           OUTPUT : out STD_LOGIC_VECTOR(3 downto 0);
+           DEC_MON_OUT : out STD_LOGIC_VECTOR(3 downto 0)              
+            );
+end test;
+
+architecture Behavioral of test is
+    signal DEC_OUT: STD_LOGIC_VECTOR(3 downto 0);
+    signal DEC_SEL: STD_LOGIC_VECTOR(1 downto 0);
+begin
+    OUTPUT(0)     <= (    SEL(1) and     SEL(0) and INPUT(3)) or 
+                        (    SEL(1) and not SEL(0) and INPUT(2)) or 
+                        (not SEL(1) and     SEL(0) and INPUT(1)) or    
+                        (not SEL(1) and not SEL(0) and INPUT(0));
+                        
+    with SEL select
+        OUTPUT(1) <=     INPUT(3) when "11",
+                            INPUT(2) when "10",
+                            INPUT(1) when "01",
+                            INPUT(0) when "00";
+
+    DEC_SEL <= SEL;
+    with DEC_SEL select
+        DEC_OUT <=    "0001" when "00",
+                  "0010" when "01",
+                        "0100" when "10",
+                        "1000" when "11";
+
+    DEC_MON_OUT <= DEC_OUT;
+    
+    OUTPUT(2) <=     (DEC_OUT(3) and INPUT(3)) or
+                        (DEC_OUT(2) and INPUT(2)) or
+                        (DEC_OUT(1) and INPUT(1)) or
+                        (DEC_OUT(0) and INPUT(0));
+                            
+end Behavioral;

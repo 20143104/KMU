@@ -1,0 +1,31 @@
+    caption{
+        font-size:1.4em;
+        font-weight:bold;
+        padding:0 0 10px 0;
+    }
+    table, td, th{
+        border-bottom:1px solid gray;
+        border-collapse: collapse;
+    }
+    td,th{
+        text-align: center;
+        padding:10px 10px
+    }
+    tr:hover{
+        background-color:beige;
+        cursor: pointer /*a 태그 아니여도 커서 바뀌게 처리*/
+    }
+    tr:nth-child(1){
+        background-color:burlywood;
+    }  
+    
+table.design-1{
+    width:40%;
+    float:left;
+    margin-right:10px; 
+    
+}
+
+table.design-2{
+    width:40%;
+}

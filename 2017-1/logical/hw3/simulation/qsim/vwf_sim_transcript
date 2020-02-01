@@ -1,0 +1,71 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/kmucs/intelFPGA_lite/16.1/modelsim_ase/linuxaloem
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Vhdl1 -c test_mux --vector_source="/home/kmucs/logical/hw3/Waveform2.vwf" --testbench_file="/home/kmucs/logical/hw3/simulation/qsim/Waveform2.vwf.vht"
+
+Inconsistency detected by ld.so: dl-close.c: 811: _dl_close: Assertion `map->l_init_called' failed!
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition    Info: Copyright (C) 2016  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel MegaCore Function License Agreement, or other     Info: applicable license agreement, including, without limitation,     Info: that your use is for the sole purpose of programming logic     Info: devices manufactured by Intel and sold by Intel or its     Info: authorized distributors.  Please refer to the applicable     Info: agreement for further details.    Info: Processing started: Tue May  9 21:06:04 2017Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Vhdl1 -c test_mux --vector_source=/home/kmucs/logical/hw3/Waveform2.vwf --testbench_file=/home/kmucs/logical/hw3/simulation/qsim/Waveform2.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/kmucs/logical/hw3/simulation/qsim/" Vhdl1 -c test_mux
+
+Inconsistency detected by ld.so: dl-close.c: 811: _dl_close: Assertion `map->l_init_called' failed!
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition    Info: Copyright (C) 2016  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel MegaCore Function License Agreement, or other     Info: applicable license agreement, including, without limitation,     Info: that your use is for the sole purpose of programming logic     Info: devices manufactured by Intel and sold by Intel or its     Info: authorized distributors.  Please refer to the applicable     Info: agreement for further details.    Info: Processing started: Tue May  9 21:06:05 2017Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/kmucs/logical/hw3/simulation/qsim/ Vhdl1 -c test_muxWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file test_mux.vho in folder "/home/kmucs/logical/hw3/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 1043 megabytes    Info: Processing ended: Tue May  9 21:06:05 2017    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:00
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/kmucs/logical/hw3/simulation/qsim/Vhdl1.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/kmucs/intelFPGA_lite/16.1/modelsim_ase/linuxaloem/vsim -c -do Vhdl1.do
+
+Reading pref.tcl
+# 10.5b
+# do Vhdl1.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:06:06 on May 09,2017# vcom -work work test_mux.vho # -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives# -- Loading package cycloneive_atom_pack# -- Loading package cycloneive_components
+# -- Compiling entity hard_block# -- Compiling architecture structure of hard_block
+# -- Compiling entity test_mux# -- Compiling architecture structure of test_mux
+# End time: 21:06:06 on May 09,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:06:06 on May 09,2017# vcom -work work Waveform2.vwf.vht # -- Loading package STANDARD
+# -- Loading package TEXTIO# -- Loading package std_logic_1164
+# -- Compiling entity test_mux_vhd_vec_tst# -- Compiling architecture test_mux_arch of test_mux_vhd_vec_tst
+# End time: 21:06:06 on May 09,2017, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.test_mux_vhd_vec_tst # Start time: 21:06:06 on May 09,2017# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.test_mux_vhd_vec_tst(test_mux_arch)# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cycloneive.cycloneive_atom_pack(body)# Loading cycloneive.cycloneive_components# Loading work.test_mux(structure)# Loading work.hard_block(structure)# Loading ieee.std_logic_arith(body)# Loading cycloneive.cycloneive_io_obuf(arch)# Loading cycloneive.cycloneive_io_ibuf(arch)# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# after#33
+# End time: 21:06:06 on May 09,2017, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/kmucs/logical/hw3/Waveform2.vwf...
+
+Reading /home/kmucs/logical/hw3/simulation/qsim/Vhdl1.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/kmucs/logical/hw3/simulation/qsim/Vhdl1_20170509210607.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

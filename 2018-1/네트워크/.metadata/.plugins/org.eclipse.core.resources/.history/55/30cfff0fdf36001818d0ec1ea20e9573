@@ -1,0 +1,14 @@
+package com.apress.spring.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import com.apress.spring.domain.Map;
+
+public interface MapRepository extends JpaRepository<Map, Long> {
+	List<Map> findByName(String name);
+	int deleteById(Long id);
+	//Map findbyString(String name);
+}

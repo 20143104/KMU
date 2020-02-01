@@ -1,0 +1,82 @@
+package com.cclab.web.server.domain;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
+public class Login {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private long level;
+    private String account;
+    private String password;
+    private String email;
+    
+    public Login(String account, String password, String email, long level)
+            throws ParseException {
+        this.account = account;
+        this.password = password;
+        this.email = email;
+        this.level = level;
+    }
+
+    public Login(Login m) {
+    	this.account = m.account;
+        this.password = m.password;
+        this.email = m.email;
+        this.level = m.level;
+        
+    }
+
+    public Login() {
+    }
+    public String getaccount() {
+    	return account;
+    }
+    
+    public void setaccount(String account) {
+    	this.account = account;
+    }
+    
+    public String getpassword() {
+    	return password;
+    }
+    public void setpassword(String password) {
+    	this.password = password;
+    }
+    public String getemail() {
+    	return email;
+
+    }
+    public void setemail(String email) {
+    	this.email = email;
+    }
+    public long getlevel() {
+    	return level;
+    }
+    public void setlevel(long level) {
+    	this.level=level;
+    }
+    public String toString() {
+        StringBuilder value = new StringBuilder("MapEntry(");
+        value.append("ACCOUNT: ");
+        value.append(account);
+        value.append(", PASSWORD: ");
+        value.append(password);
+        value.append(", EMAIL: ");
+        value.append(email);
+        value.append(", level: ");
+        value.append(level);
+        value.append(")");
+        return value.toString();
+    }
+}

@@ -1,0 +1,21 @@
+button.btn {
+        color: crimson; /*글자색*/
+        font-weight:bold; /*글자두께*/
+        display: inline-block; 
+        margin: 5px 0; /*버튼끼리 완전히 붙어있게 안하기 위해서*/
+        padding: .5em .75em; /*버튼크기 커져도 버튼과 글자간 여백자동유지*/
+        border-radius: .25em; /*곡선의 정도*/
+        box-sizing: content-box; /*테투리형태*/
+        background: transparent; /*배경색을 없애는 태그*/
+        outline: 0; /* 클릭시 발생하는 점선 삭제*/
+        vertical-align: middle;  
+        font-family: inherit; /*글자체는 상속받아*/
+        font-size: 18px; 
+        text-decoration: none; 
+        white-space: nowrap; /*버튼 크기 작아져도 줄 바꿈 x*/
+        cursor: pointer /*a 태그 아니여도 커서 바뀌게 처리*/
+    }    
+    button:hover{
+        background-color:crimson;
+        color:white;
+    } 

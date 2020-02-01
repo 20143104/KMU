@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buddy's life</title>
+<style>
+   .head {
+      margin: 5px;
+      position: static;
+      height: 90px;
+      background-image: url("logo.gif");
+      background-position: center top;
+      background-repeat:no-repeat;
+	  
+   }
+
+   .navi{
+      position: relative;
+      margin-top: 40px;
+      height: 100px;
+	  
+   }
+
+   .main{
+      position: relative;
+      margin: 15px;
+      height: 350px;
+	  
+   }
+
+	img {
+	  position: absolute;
+	  margin-left: 250px;
+	}
+
+
+   .bottom{
+      position: relative;
+      height: 100px;
+      background-image: url("banner.gif");
+      background-position: center top;
+      background-repeat:no-repeat;
+	  background-size: contain;
+   }
+   
+
+
+   ul{
+      list-style-type:none;
+      background-image:url(navigation_bar.png);
+      background-repeat:no-repeat;
+      background-size: 100%, 100%;
+      padding-left:550px;
+	  padding-top:10px;
+	  
+    }
+   
+   li{
+      display:inline;
+      font-family: "Times New Roman", Times, serif;
+      font-weight:600;
+      font-size:15px;
+      font-style:italic;
+	  max-width:100%;
+   }
+   li a{
+      display:inline-block;
+      text-align:center;
+      padding: 60px 30px;
+      text-decoration:none;
+      color:#696969;
+   }
+   li a:hover{
+      background-image:url(hover-icon.png);
+      background-repeat:no-repeat;
+   }
+
+
+</style>
+</head>
+<body>
+   <div class="head">
+   </div>
+   <div class="navi">
+      <ul>
+         <li><a href="ABOUT.html">ABOUT</a></li>
+         <li><a href="DAILY.html">DAILY-LIFE</a></li>
+         <li><a href="TIPS.html">TIPS</a></li>
+         <li><a href="TOBUDDY.html">TO.BUDDY</a></li>
+      <ul>
+   </div>
+   <div class="main">
+	    <a target="_blank" href="https://www.facebook.com/s.wBuddyForever"><img src="home-img.gif" ></a>
+   </div>
+   <div class="bottom"></div>
+   
+</body>
+</html>

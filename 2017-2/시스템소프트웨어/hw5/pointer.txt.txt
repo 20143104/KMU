@@ -1,0 +1,117 @@
+POINTER	START	0
+	USE	TEXT
+FIRST	MOV	SP, #STK_BTM
+	MOV	B, =0
+	CALL	MAIN
+RA0	COB
+	USE 	DATA
+	USE 	BSS
+	USE	STACK
+HEAP	DBOX	FREE
+FREE	RESDBOX	499
+STK_BTM	EQU	$
+
+ADD_TWO	PUSH 	B
+	MOV	B, SP
+	SUB	SP, =2
+	PUSH	C
+	PUSH	X
+	MOV	C, %4
+	ADD	C, %6
+	MOV	%-2, C
+	MOV	%8, C
+	POP	X
+	POP	C
+	MOV 	SP, B
+	POP	B
+	RET
+
+MAIN	PUSH	B
+	MOV	B, SP
+	SUB	SP, =30
+	PUSH	C
+	PUSH	X
+	MOV	C, =10
+	MOV	X, =18
+LOOP	MOV	%@-20, C
+	SUB	X, =2
+	JLOOP	LOOP 
+
+	PUSH	A
+	MOV	A, =2
+	PUSH	A
+	MOV	A, =3
+	PUSH	A
+	CALL	ADD_TWO
+	MOV	A, %-36
+	ADD	SP, =6
+	MOV	%-26, A
+	OUT	12
+
+	PUSH	A
+	MOV	X, =4
+	MOV	A, %@-20
+	MOV	%-22,A
+	PUSH	A
+	MOV	X, =6
+	MOV	A, %@-20
+	MOV	%-24,A
+	PUSH	A
+	CALL	ADD_TWO
+	MOV	A, %-36
+	ADD	SP, =6
+	MOV	%-26, A
+	OUT	12
+
+	PUSH	A
+	MOV	X, =8
+	MOV	A, %@-20
+	PUSH	A
+	MOV	X, =10
+	MOV	A, %@-20
+	PUSH	A
+	CALL 	ADD_TWO
+	MOV	A, %-36
+	ADD	SP, =6
+	MOV	%-26, A
+	OUT	12
+	
+	PUSH	A
+	MOV	C, B
+	SUB	C, =20
+	MOV	%-28, C
+	ADD	C, =2
+	MOV	A, *C
+	PUSH 	A
+	MOV	C, %-28
+	ADD	C, =4
+	MOV	A, *C
+	PUSH	A
+	CALL 	ADD_TWO
+	MOV	A, %-36
+	ADD	SP, =6
+	MOV	%-26, A
+	OUT	12
+
+	PUSH	A
+	MOV	C, %-28
+	ADD	C, =10
+	MOV	%-28, C
+	ADD	C, =2
+	MOV	A, *C
+	PUSH 	A
+	MOV	C, %-28
+	ADD	C, =4
+	MOV	A, *C
+	PUSH	A
+	CALL 	ADD_TWO
+	MOV	A, %-36
+	ADD	SP, =6
+	MOV	%-26, A
+	OUT	12	
+
+	POP	X
+	POP	C
+	MOV	SP, B
+	POP	B
+	RET

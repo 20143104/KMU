@@ -1,0 +1,229 @@
+$comment
+	File created using the following command:
+		vcd file Vhdl3.msim.vcd -direction
+$end
+$date
+	Sun May  7 15:57:27 2017
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module test_mux4_vhd_vec_tst $end
+$var wire 1 ! DEC_MON_OUT [3] $end
+$var wire 1 " DEC_MON_OUT [2] $end
+$var wire 1 # DEC_MON_OUT [1] $end
+$var wire 1 $ DEC_MON_OUT [0] $end
+$var wire 1 % INPUT [3] $end
+$var wire 1 & INPUT [2] $end
+$var wire 1 ' INPUT [1] $end
+$var wire 1 ( INPUT [0] $end
+$var wire 1 ) OUTPUT [3] $end
+$var wire 1 * OUTPUT [2] $end
+$var wire 1 + OUTPUT [1] $end
+$var wire 1 , OUTPUT [0] $end
+$var wire 1 - SEL [1] $end
+$var wire 1 . SEL [0] $end
+
+$scope module i1 $end
+$var wire 1 / gnd $end
+$var wire 1 0 vcc $end
+$var wire 1 1 unknown $end
+$var wire 1 2 devoe $end
+$var wire 1 3 devclrn $end
+$var wire 1 4 devpor $end
+$var wire 1 5 ww_devoe $end
+$var wire 1 6 ww_devclrn $end
+$var wire 1 7 ww_devpor $end
+$var wire 1 8 ww_INPUT [3] $end
+$var wire 1 9 ww_INPUT [2] $end
+$var wire 1 : ww_INPUT [1] $end
+$var wire 1 ; ww_INPUT [0] $end
+$var wire 1 < ww_SEL [1] $end
+$var wire 1 = ww_SEL [0] $end
+$var wire 1 > ww_OUTPUT [3] $end
+$var wire 1 ? ww_OUTPUT [2] $end
+$var wire 1 @ ww_OUTPUT [1] $end
+$var wire 1 A ww_OUTPUT [0] $end
+$var wire 1 B ww_DEC_MON_OUT [3] $end
+$var wire 1 C ww_DEC_MON_OUT [2] $end
+$var wire 1 D ww_DEC_MON_OUT [1] $end
+$var wire 1 E ww_DEC_MON_OUT [0] $end
+$var wire 1 F \OUTPUT[0]~output_o\ $end
+$var wire 1 G \OUTPUT[1]~output_o\ $end
+$var wire 1 H \OUTPUT[2]~output_o\ $end
+$var wire 1 I \OUTPUT[3]~output_o\ $end
+$var wire 1 J \DEC_MON_OUT[0]~output_o\ $end
+$var wire 1 K \DEC_MON_OUT[1]~output_o\ $end
+$var wire 1 L \DEC_MON_OUT[2]~output_o\ $end
+$var wire 1 M \DEC_MON_OUT[3]~output_o\ $end
+$var wire 1 N \SEL[1]~input_o\ $end
+$var wire 1 O \INPUT[2]~input_o\ $end
+$var wire 1 P \INPUT[3]~input_o\ $end
+$var wire 1 Q \INPUT[0]~input_o\ $end
+$var wire 1 R \INPUT[1]~input_o\ $end
+$var wire 1 S \SEL[0]~input_o\ $end
+$var wire 1 T \OUTPUT~0_combout\ $end
+$var wire 1 U \OUTPUT~1_combout\ $end
+$var wire 1 V \Mux0~0_combout\ $end
+$var wire 1 W \Mux0~1_combout\ $end
+$var wire 1 X \OUTPUT~2_combout\ $end
+$var wire 1 Y \OUTPUT~3_combout\ $end
+$var wire 1 Z \OUTPUT~4_combout\ $end
+$var wire 1 [ \OUTPUT~5_combout\ $end
+$var wire 1 \ \ALT_INV_OUTPUT~2_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0/
+10
+x1
+12
+13
+14
+15
+16
+17
+1F
+1G
+1H
+0I
+1J
+0K
+0L
+0M
+0N
+1O
+1P
+1Q
+1R
+0S
+1T
+1U
+1V
+1W
+0X
+0Y
+0Z
+0[
+1\
+1%
+1&
+1'
+1(
+0-
+0.
+18
+19
+1:
+1;
+0<
+0=
+0>
+1?
+1@
+1A
+0B
+0C
+0D
+1E
+0!
+0"
+0#
+1$
+0)
+1*
+1+
+1,
+$end
+#40000
+1.
+1=
+1S
+1X
+1Y
+0\
+1K
+0J
+1D
+0E
+1#
+0$
+#80000
+0.
+1-
+0=
+1<
+1N
+0S
+0T
+0V
+0Y
+1Z
+1L
+0K
+1C
+0D
+0#
+1"
+#120000
+1.
+1=
+1S
+1T
+1V
+0Z
+1[
+1M
+0L
+1B
+0C
+0"
+1!
+#160000
+0.
+0-
+0%
+0&
+0'
+0(
+0=
+0<
+0;
+0:
+09
+08
+0P
+0O
+0R
+0Q
+0N
+0S
+0X
+0[
+0T
+0V
+1\
+0W
+0U
+0M
+1J
+0B
+0F
+0H
+0G
+1E
+0!
+0A
+0?
+0@
+1$
+0,
+0+
+0*
+#1000000

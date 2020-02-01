@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Buddy</title>
+<style>
+	h1{
+		color: black;
+		text-align: center;
+		font-family: "Times New Roman";
+		text-decoration: underline;
+	}
+
+	div.polaroid {
+		width: 30%;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+	}	
+
+	div.container {
+		text-align: center;
+		padding: 10px 20px;
+	}
+
+	p{
+		font-family: "courier";
+	}
+
+	p::first-letter {
+		color: #ff0000;
+		font-size: xx-large;
+	}
+
+	#letter {
+		height:300px;
+		width: 100px;
+	}
+
+
+	#home {
+		opacity: 0.4;
+		filter: alpha(opacity=40); /* For IE8 and earlier */
+		position: absolute;
+		right:20px;
+		bottom: 10px;
+	}
+
+	#home:hover {
+		opacity: 1.0;
+		filter: alpha(opacity=100); /* For IE8 and earlier */
+	} 
+
+	
+</style>
+</head>
+<body style="text-align:center;">>
+	<audio autoplay loop>
+		<source src="bgm.mp3" type="audio/mpeg">
+	</audio>
+	<h1> TO BUDDY </h1>
+	<div class="polaroid">
+		<img id="letter" src="letter.jpg" alt="buddy" style="width:100%">
+		<div class="container">
+			<p>Thank you for your love. Be healthy always. I promise that I will make you happy forever. I love you so much.</p>
+		</div>
+	</div>
+	<a href="project.html">
+		<img id="home" src="home.png" >
+	</a>
+
+</body>
+</html>

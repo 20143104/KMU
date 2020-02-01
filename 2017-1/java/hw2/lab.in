@@ -1,0 +1,37 @@
+init 5
+edge 0 1 3
+edge 0 3 2
+edge 1 2 4
+edge 1 4 6
+edge 2 3 7
+edge 2 4 3
+edge 3 4 5
+edge 4 0 4
+dijk 0
+dijk 3
+dijk 4
+init 8
+edge 0 1 7
+edge 0 2 5
+edge 0 3 1
+edge 1 4 4
+edge 2 1 7
+edge 2 4 9
+edge 2 5 9
+edge 3 1 5
+edge 3 6 16
+edge 4 3 4
+edge 4 7 1
+edge 5 6 1
+edge 6 0 2
+edge 6 7 4
+edge 7 5 2
+edge 7 6 4
+dijk 0
+dijk 2
+dijk 1
+dijk 6
+dijk 2
+dijk 3
+dijk 5
+quit

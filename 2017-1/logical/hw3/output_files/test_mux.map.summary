@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue May  9 21:03:13 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : test_mux
+Top-level Entity Name : test_mux
+Family : Cyclone IV E
+Total logic elements : 22
+    Total combinational functions : 22
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

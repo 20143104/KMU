@@ -1,0 +1,35 @@
+i 5
+e 0 1
+e 0 3
+e 1 2
+e 1 4
+e 2 3
+e 3 4
+bfs 0
+bfs 1
+bfs 2
+bfs 3
+bfs 4
+i 9
+e 1 2
+e 1 4
+e 2 3
+e 2 5
+e 2 6
+e 3 5
+e 4 6
+e 5 7
+e 5 0
+e 6 7
+e 6 0
+e 8 0
+bfs 0
+bfs 1
+bfs 2
+bfs 3
+bfs 4
+bfs 5
+bfs 6
+bfs 7
+bfs 8
+quit

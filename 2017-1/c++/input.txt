@@ -1,0 +1,8 @@
+7
+sun *sun
+sun +sun
+abcdefg abcdefg
+abcdefg ?ab+de**fg
+abcdefg ?b*de+
+abcdefg +*?c*?e?+
+ab +++

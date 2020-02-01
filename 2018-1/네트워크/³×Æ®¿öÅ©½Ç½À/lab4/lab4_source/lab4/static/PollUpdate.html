@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>헌법개정안투표</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#get').click(function () {
+                $.ajax({
+                    url: '/poll',
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val(data);
+                    }
+                });
+            });
+
+            $('#post').click(function () {
+            	var myvalue = $(":input:radio[name=choice]:checked").val();
+            	var mycolor = (myvalue=='1') ? '#00ff00' : 
+            		        (myvalue=='2') ? '#0000ff' : '#ff0000';
+            	console.log(JSON.stringify({
+                    name: $('#name').val(),
+                    color: $('#color').val(),
+                }));
+                $.ajax({
+                    url: '/poll',
+                    type: 'post',
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        color: mycolor,
+                    }),
+                    success: function (data) {
+                        $('#output').val(data);
+                    }
+                });
+            });
+
+            $('#put').click(function () {
+            	var myvalue = $(":input:radio[name=choice]:checked").val();
+            	var mycolor = (myvalue=='1') ? '#00ff00' : 
+            		          (myvalue=='2') ? '#0000ff' : '#ff0000';
+                $.ajax({
+                    url: '/poll/{name}',
+                    type: 'put',
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        color: mycolor,
+                    }),
+                    success: function (data) {
+                        $('#output').val(data);
+                    }
+                });
+            });
+
+            $('#delete').click(function () {
+                $.ajax({
+                    url: '/poll',
+                    type: 'delete',
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        color: $('#color').val(),
+                    }),
+                    success: function (data) {
+                    	obj = JSON.parse(data);
+                        $('#id').val(obj.id);
+                        $('#name').val(obj.name);
+                        $('#color').val(obj.color);
+                        $('#output').val(data);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header id="main_header">
+        <h2>헌법개정안투표 실시간데이터입력판</h2>
+    </header>
+
+    <button id="get">리스트요청</button>
+    <button id="post">데이터생성</button>
+    <button id="put">데이터수정</button>
+    <button id="delete">데이터삭제</button>
+     
+    <h3>데이터입력</h3>
+    <label> 투표구역 : </label> </label> <br> <input id="name" size="15" /> 
+    
+  <div>
+  <label> 개정안 : </label> <br>
+    <input type="radio" id="choice1"
+     name="choice" value="1">
+    <label for="choice1">(1안)4년임기-재선허용</label> <br>
+
+    <input type="radio" id="choice2"
+     name="choice" value="2">
+    <label for="choice2">(2안)6년임기-재선불허</label> <br>
+
+    <input type="radio" id="choice3"
+     name="choice" value="3">
+    <label for="choice3">(3안)헌법개정반대</label>
+  </div>
+  
+
+    <h3>실행결과</h3>
+    <textarea id="output" disabled="disabled" cols="50" rows="20"></textarea>
+</body>
+</html>

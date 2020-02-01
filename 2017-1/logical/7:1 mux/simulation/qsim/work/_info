@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/kmucs/logical/7:1 mux/simulation/qsim
+Ehard_block
+Z1 w1494223597
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 K`kJb<]?z4U5EbkG_:lMO3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 HFZ8mBI5?[8TM9e2YGWCa2
+R0
+Z8 8test_mux.vho
+Z9 Ftest_mux.vho
+l0
+L35
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1494223600
+!i10b 1
+Z12 !s108 1494223600.000000
+Z13 !s90 -work|work|test_mux.vho|
+Z14 !s107 test_mux.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+l65
+L51
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etest_mux
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+R8
+R9
+l0
+L78
+Vn9dNbXeCN0QLPnEDA3SHH3
+!s100 ;fUm]`CXaB^kmeo;;OM^V2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 8 test_mux 0 22 n9dNbXeCN0QLPnEDA3SHH3
+l178
+L112
+VAN1UYSdHzY=Hcel8FNb]N2
+!s100 Zk[jim=;>6iD:B<NSUdD@1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etest_mux_vhd_vec_tst
+Z17 w1494223596
+R5
+R6
+R0
+Z18 8Waveform2.vwf.vht
+Z19 FWaveform2.vwf.vht
+l0
+L32
+V1UzNiBJk>XTFCMRMS56O[1
+!s100 STNSFcO^eh>bBPzIQQUHZ1
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|Waveform2.vwf.vht|
+Z21 !s107 Waveform2.vwf.vht|
+!i113 1
+R15
+R16
+Atest_mux_arch
+R5
+R6
+Z22 DEx4 work 20 test_mux_vhd_vec_tst 0 22 1UzNiBJk>XTFCMRMS56O[1
+l49
+L34
+VWUfCRmGOkZgPA5P6m=Ba:1
+!s100 J^J3RN2ImDVTzeo]7N?U42
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16

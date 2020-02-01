@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="org.springframework.mail.javamail.MimeMessageHelper"/>
+<fullyQualifiedTypeName name="com.cclab.spring.email.smtpmailsender"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="javax.mail.MessagingException"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
+<fullyQualifiedTypeName name="ch.qos.logback.classic.Logger"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.mail.javamail.JavaMailSender"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="org.springframework.mail.javamail.MimeMessagePreparator"/>
+<fullyQualifiedTypeName name="javax.mail.internet.MimeMessage"/>
+<fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
+<fullyQualifiedTypeName name="org.springframework.mail.MailException"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="javax.mail.Session"/>
+<fullyQualifiedTypeName name="javax.mail.Message.RecipientType"/>
+</qualifiedTypeNameHistroy>
